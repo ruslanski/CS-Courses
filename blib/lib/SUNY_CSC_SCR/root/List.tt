@@ -1,0 +1,10 @@
+<h1>A course guides for CSC students at SUNY </h1> 
+
+<br>
+</br>
+[%coursedescription%]
+
+[%FOREACH part IN nextcourse.keys %]
+	<p><a href="/ListOfclasses/Courses/[%part%]">[% nextcourse.$part %] </a></p>
+
+[%END %]
