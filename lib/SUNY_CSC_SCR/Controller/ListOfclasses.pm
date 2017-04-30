@@ -28,17 +28,35 @@ sub index :Path :Args(0) {
 =head2 
 =cut
 
-sub Courses :Local Args(1) {
-    my ( $self, $c, $nextPage ) = @_;
-    my $description=$c->model("Courses")->getdescription($nextPage);
-    my $next=$c->model("Courses")->getNext($nextPage);
+#sub Courses :Local Args(1) {
+  #  my ( $self, $c, $nextPage ) = @_;
+ #   my $description=$c->model("Courses")->getdescription($nextPage);
+#    my $next=$c->model("Courses")->getNext($nextPage);
     
 
     #Goal: First listOfclass then courses then comment page
     #my $next=$c->model("Comments")->getNext($nextPage);
-    $c->stash(template=>'List.tt', coursedescription => $description,
-	      nextcourse => $next);
+#    $c->stash(template=>'List.tt', coursedescription => $description,
+#	      nextcourse => $next);
+#}
+
+
+sub list :Local {
+        # Retrieve the usual Perl OO '$self' for this object. $c is the Catalyst
+        # 'Context' that's used to 'glue together' the various components
+        # that make up the application
+     my ($self, $c) = @_;
+
+        # Retrieve all of the book records as book model objects and store
+        # in the stash where they can be accessed by the TT template
+     $c->stash(listOfclasses => [$c->model('DB::listOfclass')->all]);
+
+        # Set the TT template to use.  You will almost always want to do this
+        # in your action methods (action methods respond to user input in
+        # your controllers).
+     $c->stash(template => 'listOfclasses/list.tt');
 }
+
 
 =encoding utf8
 
