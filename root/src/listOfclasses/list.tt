@@ -1,20 +1,48 @@
-<html>
-<head></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 <body>
-<h3>List of CSC Courses</h3>
-[%META title = 'List of Classes' -%]
-<table>
-<tr><th>ID</th><th>Title</th></tr>
-[% FOREACH class IN listOfclasses -%]
-<tr>
-<td>
-<a href="#">[% class.courseid %]</a></td>
-<td>[% class.coursename %]</td>
 
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CSC Courses</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</nav>
 
-</tr>
-[%END -%]
-</table>
+<div class="container">
+  <h3 style="text-align:center;">List of Courses</h3>
+<div class="table-responsive" style="margin-top:3%;">
+  <table class="table table-striped table-hover col-md-offset-1">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+	[% FOREACH class IN listOfclasses -%]
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="#">[% class.courseid %]</a></td>
+        <td>[% class.coursename %]</td>
+      </tr>      
+    </tbody>
+    [%END -%]
+  </table>
+</div>
+</div>
+
 </body>
 </html>
 
