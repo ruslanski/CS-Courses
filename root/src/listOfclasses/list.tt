@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>CSC Courses</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../static/style.css"/>
@@ -51,7 +51,7 @@
 	table-striped hide all the over flow when widow size
 	is reduced.
   -->
-  <table class="table table-striped table-hover col-md-offset-1">
+  <table class="table table-striped table-hover col-md-offset-2">
     <thead>
       <tr>
         <th>Course ID</th>
@@ -61,7 +61,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="#">[% class.courseid %]</a></td>
+        <td style="width:100px;"><a href="#">[% class.courseid %]</a></td>
         <td>[% class.coursename %]</td>
       </tr>      
     </tbody>
