@@ -62,7 +62,7 @@
     </thead>
     <tbody>
       <tr>
-        <td style="width:100px;"><a href="#">[% class.courseid %]</a></td>
+        <td style="width:100px;"><a href="descriptions/csc119">[% class.courseid %]</a></td>
         <td>[% class.coursename %]</td>
       </tr>      
     </tbody>
