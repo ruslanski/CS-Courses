@@ -23,6 +23,14 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
+
+ $c->stash(listOfclasses => [$c->model('DB::listOfclass')->all]);
+
+        # Set the TT template to use.  You will almost always want to do this
+        # in your action methods (action methods respond to user input in
+        # your controllers).
+     $c->stash(template => 'index.tt');
+
 }
 
 =head2 
@@ -45,16 +53,16 @@ sub list :Local {
         # Retrieve the usual Perl OO '$self' for this object. $c is the Catalyst
         # 'Context' that's used to 'glue together' the various components
         # that make up the application
-     my ($self, $c) = @_;
+  #   my ($self, $c) = @_;
 
         # Retrieve all of the book records as book model objects and store
         # in the stash where they can be accessed by the TT template
-     $c->stash(listOfclasses => [$c->model('DB::listOfclass')->all]);
+ #    $c->stash(listOfclasses => [$c->model('DB::listOfclass')->all]);
 
         # Set the TT template to use.  You will almost always want to do this
         # in your action methods (action methods respond to user input in
         # your controllers).
-     $c->stash(template => 'listOfclasses/list.tt');
+#     $c->stash(template => 'list.tt');
 }
 
 

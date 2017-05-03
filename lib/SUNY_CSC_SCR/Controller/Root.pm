@@ -42,7 +42,7 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     # Hello World
-    $c->res->redirect($c->uri_for('listofclasses/list'))&& $c->detach();
+    $c->res->redirect($c->uri_for('listofclasses'))&& $c->detach();
 }
 
 

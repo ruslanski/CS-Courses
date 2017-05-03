@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <table>  
+ <tr>
+        <th>CourseID</th>
+        <th>Description</th>
+        [% FOREACH des IN descriptions -%]
+      </tr>
+    <tbody>
+      <tr>
+        <td style="width:100px;"><a href="csc119">[% des.courseid %]</a></td>
+        <td>[% des.descr %]</td>
+      </tr>
+    </tbody>
+    [%END -%]
+  </table>
+</body>
+</html>
