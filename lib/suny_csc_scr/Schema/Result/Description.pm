@@ -1,12 +1,12 @@
 use utf8;
-package suny_csc_scr::Schema::Result::ListOfclass;
+package suny_csc_scr::Schema::Result::Description;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
 
 =head1 NAME
 
-suny_csc_scr::Schema::Result::ListOfclass
+suny_csc_scr::Schema::Result::Description
 
 =cut
 
@@ -30,11 +30,11 @@ extends 'DBIx::Class::Core';
 
 __PACKAGE__->load_components("InflateColumn::DateTime");
 
-=head1 TABLE: C<listOfclasses>
+=head1 TABLE: C<descriptions>
 
 =cut
 
-__PACKAGE__->table("listOfclasses");
+__PACKAGE__->table("descriptions");
 
 =head1 ACCESSORS
 
@@ -45,21 +45,9 @@ __PACKAGE__->table("listOfclasses");
   is_nullable: 0
   size: 7
 
-=head2 coursename
+=head2 descr
 
-  data_type: 'varchar'
-  is_nullable: 1
-  size: 64
-
-=head2 fileds
-
-  data_type: 'varchar'
-  is_nullable: 1
-  size: 20
-
-=head2 rating
-
-  data_type: 'integer'
+  data_type: 'text'
   is_nullable: 1
 
 =cut
@@ -67,12 +55,8 @@ __PACKAGE__->table("listOfclasses");
 __PACKAGE__->add_columns(
   "courseid",
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 7 },
-  "coursename",
-  { data_type => "varchar", is_nullable => 1, size => 64 },
-  "fileds",
-  { data_type => "varchar", is_nullable => 1, size => 20 },
-  "rating",
-  { data_type => "integer", is_nullable => 1 },
+  "descr",
+  { data_type => "text", is_nullable => 1 },
 );
 
 =head1 PRIMARY KEY
@@ -87,23 +71,9 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("courseid");
 
-=head1 UNIQUE CONSTRAINTS
-
-=head2 C<nameofcourse>
-
-=over 4
-
-=item * L</coursename>
-
-=back
-
-=cut
-
-__PACKAGE__->add_unique_constraint("nameofcourse", ["coursename"]);
-
 
 # Created by DBIx::Class::Schema::Loader v0.07046 @ 2017-05-03 12:28:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:pK3saSSllZ42GxLB87tapw
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Pgy36uojxzf6VWE/kSmCOA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

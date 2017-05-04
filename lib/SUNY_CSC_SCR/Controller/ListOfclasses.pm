@@ -1,5 +1,6 @@
 package SUNY_CSC_SCR::Controller::ListOfclasses;
 use Moose;
+use Catalyst 'Redirect';
 use namespace::autoclean;
 BEGIN { extends 'Catalyst::Controller'; }
 
@@ -33,8 +34,25 @@ sub index :Path :Args(0) {
 
 }
 
-=head2 
-=cut
+sub course :Chained('/') :PathPart('listofclasses/course') :Args(1){
+#Chained('/') :PathPart('books/url_create') :Args(5)
+    my($self, $c, $crsID) = @_;
+    $c->stash(course => $c->model('DB::listOfclass')->search({courseid => $crsID})->all);
+    $c->stash(desc => [$c->model('DB::description')->search({courseid => $crsID})->all]);
+    #$c->stash(comment => [$c->model('DB::comment')->search({courseid => $crsID})->all]);
+    $c->stash(template => 'csc119.tt');
+}
+
+sub comment :Chained('/') :PathPart('listofclasses/comment') {
+    my($self, $c) = @_;
+    my $courseid = $c->request->params->{courseID};
+    my $comment = $c->request->params->{comment};
+
+    $c->model('DB::comment')->create({courseid => $courseid, comment=>$comment});
+    #$c->stash(template => 'csc119.tt');
+    return $c->response->redirect($c->uri_for_action('/listofclasss/course/'.$courseid));
+}
+
 
 #sub Courses :Local Args(1) {
   #  my ( $self, $c, $nextPage ) = @_;

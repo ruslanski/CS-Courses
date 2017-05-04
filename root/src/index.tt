@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>                        
                 </button>          
              <a href="listofclasses" class="navbar-brand">CSC Courses</a><!--Header--> 
-<a href="descriptions" class="navbar-brand">Description of Courses</a>           
+         
  </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -62,7 +62,7 @@
     </thead>
     <tbody>
       <tr>
-        <td style="width:100px;"><a href="descriptions/csc119">[% class.courseid %]</a></td>
+        <td style="width:100px;"><a href='course/[% class.courseid %]'>[% class.courseid %]</a></td>
         <td>[% class.coursename %]</td>
       </tr>      
     </tbody>
