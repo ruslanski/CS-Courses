@@ -51,11 +51,10 @@ __PACKAGE__->table("listOfclasses");
   is_nullable: 1
   size: 64
 
-=head2 fileds
+=head2 fields
 
-  data_type: 'varchar'
+  data_type: 'integer'
   is_nullable: 1
-  size: 20
 
 =head2 rating
 
@@ -69,8 +68,8 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 7 },
   "coursename",
   { data_type => "varchar", is_nullable => 1, size => 64 },
-  "fileds",
-  { data_type => "varchar", is_nullable => 1, size => 20 },
+  "fields",
+  { data_type => "integer", is_nullable => 1 },
   "rating",
   { data_type => "integer", is_nullable => 1 },
 );
@@ -102,8 +101,8 @@ __PACKAGE__->set_primary_key("courseid");
 __PACKAGE__->add_unique_constraint("nameofcourse", ["coursename"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07046 @ 2017-05-03 12:28:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:pK3saSSllZ42GxLB87tapw
+# Created by DBIx::Class::Schema::Loader v0.07046 @ 2017-05-04 16:10:21
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:2SfCo2w6HuEfXtILP+aKmw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

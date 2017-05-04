@@ -59,11 +59,11 @@
                    </form>
 			[% END -%]
 		   [% END -%]
-
+                   <h4> Comments </h4>
 		   <div>
 		     [% FOREACH com IN comment -%]
-		       <p>[% comment.comment %]
-		     [%END -%]    	
+		       <p>[% com.comment %] </p>
+		     [% END -%]    	
 		  </div>               
                 </div>
             

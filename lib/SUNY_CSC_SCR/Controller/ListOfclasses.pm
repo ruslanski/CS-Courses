@@ -38,7 +38,7 @@ sub course :Chained('/') :PathPart('listofclasses/course') :Args(1){
     my($self, $c, $crsID) = @_;
     $c->stash(course => $c->model('DB::listOfclass')->search({courseid => $crsID})->all);
     $c->stash(desc => [$c->model('DB::description')->search({courseid => $crsID})->all]);
-    #$c->stash(comment => [$c->model('DB::comment')->search({courseid => $crsID})->all]);
+    $c->stash(comment => [$c->model('DB::comment')->search({courseid => $crsID})->all]);
     $c->stash(template => 'csc119.tt');
 }
 
