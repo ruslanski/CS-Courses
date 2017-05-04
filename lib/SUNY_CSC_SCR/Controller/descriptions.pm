@@ -24,13 +24,7 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-#    $c->response->body('Matched SUNY_CSC_SCR::Controller::descriptions in descriptions.');
-        # Retrieve all of the book records as book model objects and store
-        # in the stash where they can be accessed by the TT template
-     $c->stash(descriptions => [$c->model('DB::description')->all]);
-     $c->stash(template => 'descriptions/index.tt');
-}
-
+}        
 sub csc119 :Local {
 my ($self, $c) = @_;
 

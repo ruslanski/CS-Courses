@@ -28,21 +28,12 @@ The root page (/)
 
 =cut
 
-#sub index :Path :Args(0) {
-#    my ( $self, $c ) = @_;
-
-    # Hello World
-    #$c->response->body( $c->welcome_message );
-#    $c->forward("ListOfclasses", "Courses",["start"]);	
-
-    #$c->forward("ListOfclasses", "Courses","Comment",["start"]);
-#}
-
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     # Hello World
-    $c->res->redirect($c->uri_for('listofclasses'))&& $c->detach();
+    $c->res->redirect($c->uri_for('listofclasses/'))&& $c->detach();
+    #$c->stash(template => 'index.tt'); 
 }
 
 
