@@ -39,17 +39,20 @@ sub course :Chained('/') :PathPart('listofclasses/course') :Args(1){
     $c->stash(course => $c->model('DB::listOfclass')->search({courseid => $crsID})->all);
     $c->stash(desc => [$c->model('DB::description')->search({courseid => $crsID})->all]);
     $c->stash(comment => [$c->model('DB::comment')->search({courseid => $crsID})->all]);
+
     $c->stash(template => 'csc119.tt');
 }
 
 sub comment :Chained('/') :PathPart('listofclasses/comment') {
     my($self, $c) = @_;
+    #Taking courseid and comment from the form 
     my $courseid = $c->request->params->{courseID};
     my $comment = $c->request->params->{comment};
-
+    #Adding the courseid and comment in the comment table
     $c->model('DB::comment')->create({courseid => $courseid, comment=>$comment});
     #$c->stash(template => 'csc119.tt');
-    return $c->response->redirect($c->uri_for_action('/listofclasses/course/'.$courseid)); # REMOVED / before listofclasses
+    #return $c->response->redirect($c->uri_for_action('/listofclasses/course/'.$courseid)); # REMOVED / before listofclasses
+    $c->res->redirect('/listofclasses/course/'.$courseid); #redirect to the courseid page
 }
 
 

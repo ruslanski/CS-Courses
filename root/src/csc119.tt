@@ -43,11 +43,14 @@
         <div class="container" style="border:1px solid black; margin-top:10%;">
             <div class="row">
                 <div class="col-md-8 col-md-offset-3">
+	
 		     [% FOREACH class IN desc -%]
 			[% FOREACH crs IN course -%]
                     <h4>Course Name</h4><p>[% crs.coursename %]</p>
                     <h4>Course ID</h4><p>[% crs.courseid %]</p>
+                    <h4>Course Rating</h4><p>[% crs.rating %]</p>
                     <h4>Course Description</h4><p> [% class.descr %] </p>
+		    
     
  		        
            	    <form method="post" action="/listofclasses/comment">
@@ -57,8 +60,12 @@
                       </table>
                      <input type="submit"  value="Submit">
                    </form>
+				
 			[% END -%]
 		   [% END -%]
+	
+		   
+			
                    <h4> Comments </h4>
 		   <div>
 		     [% FOREACH com IN comment -%]
