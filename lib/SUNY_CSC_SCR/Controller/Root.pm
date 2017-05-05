@@ -62,7 +62,10 @@ sub end : ActionClass('RenderView') {}
 
 =head1 AUTHOR
 
-Ahmed Alotaibi,,,
+Ruslan Shakirov
+Ahmed Alotaibi
+Akshay Singh
+Date - 05/09/2017
 
 =head1 LICENSE
 

@@ -3,7 +3,7 @@ use Moose;
 use namespace::autoclean;
 
 extends 'Catalyst::View::TT';
-
+#using .tt file as template 
 __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.tt',
     render_die => 1,
@@ -23,7 +23,10 @@ L<SUNY_CSC_SCR>
 
 =head1 AUTHOR
 
-Ahmed Alotaibi,,,
+Ruslan Shakirov
+Ahmed Alotaibi
+Akshay Singh
+Date - 05/09/2017
 
 =head1 LICENSE
 

@@ -51,8 +51,6 @@ sub comment :Chained('/') :PathPart('listofclasses/comment') {
     my $comment = $c->request->params->{comment};
     #Adding the courseid and comment in the comment table
     $c->model('DB::comment')->create({courseid => $courseid, comment=>$comment});
-    #$c->stash(template => 'csc119.tt');
-    #return $c->response->redirect($c->uri_for_action('/listofclasses/course/'.$courseid)); # REMOVED / before listofclasses
     $c->res->redirect('/listofclasses/course/'.$courseid); #redirect to the courseid page
 }
 
@@ -61,8 +59,9 @@ sub rating :Chained('/') :PathPart('listofclasses/rating')  {
     #Retrieve values from the form
     my $courseid = $c->request->params->{courseid};
     my $rating = $c->request->params->{rating};
+    #search using courseid and then update the specific courseid rating
     $c->model('DB::listOfclass')->search(courseid => $courseid)->update({rating => $rating});
-    $c->res->redirect('/listofclasses/course/'.$courseid);
+    $c->res->redirect('/listofclasses/course/'.$courseid);# redirect back to the course page
 }
     
 
@@ -71,8 +70,10 @@ sub rating :Chained('/') :PathPart('listofclasses/rating')  {
 
 =head1 AUTHOR
 
-Ahmed Alotaibi,,,
-
+Ruslan Shakirov
+Ahmed Alotaibi
+Akshay Singh
+Date - 05/09/2017
 =head1 LICENSE
 
 This library is free software. You can redistribute it and/or modify

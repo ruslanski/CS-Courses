@@ -2,7 +2,7 @@ package SUNY_CSC_SCR::Model::DB;
 
 use strict;
 use base 'Catalyst::Model::DBIC::Schema';
-#Connects to the mysql database using asing012_data account
+
 __PACKAGE__->config(
     schema_class => 'suny_csc_scr::Schema',
     
@@ -31,10 +31,7 @@ Catalyst::Helper::Model::DBIC::Schema - 0.65
 
 =head1 AUTHOR
 
-Ruslan Shakirov
-Ahmed Alotaibi
 Akshay Singh
-Date - 05/09/2017
 
 =head1 LICENSE
 

@@ -40,7 +40,10 @@ my ($self, $c) = @_;
 
 =head1 AUTHOR
 
-Ruslan Shakirov,,,
+Ruslan Shakirov
+Ahmed Alotaibi
+Akshay Singh
+Date - 05/09/2017
 
 =head1 LICENSE
 
