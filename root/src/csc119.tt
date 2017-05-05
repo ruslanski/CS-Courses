@@ -49,8 +49,18 @@
                     <h4>Course Name</h4><p>[% crs.coursename %]</p>
                     <h4>Course ID</h4><p>[% crs.courseid %]</p>
                     <h4>Course Rating</h4><p>[% crs.rating %]</p>
-                    <h4>Course Description</h4><p> [% class.descr %] </p>
+
+		    <form method="post" action="/listofclasses/rating">
+                      <table>
+                        <input type='hidden' name='courseid' value='[% crs.courseid %]'>
+                        <tr><td>Rating:</td><td><input type="text" name="rating"></td></tr>
+                      </table>
+                     <input type="submit"  value="Submit">
+                   </form>
+
 		    
+                    <h4>Course Description</h4><p> [% class.descr %] </p>
+  		    
     
  		        
            	    <form method="post" action="/listofclasses/comment">
